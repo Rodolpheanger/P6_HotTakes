@@ -1,7 +1,6 @@
 const path = require("path");
 require("dotenv").config({ path: "./config/.env" });
 const express = require("express");
-const helmet = require("helmet");
 const app = express();
 require("../config/database");
 const cors = require("cors");
@@ -13,8 +12,9 @@ app.use(
   cors({
     origin: "https://p6.rodolpheanger.fr",
     methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-    // headers:
-    //   "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization",
+    allowedHeaders:
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+    credentials: true, // Inclure les cookies dans les requêtes (si nécessaire)
   })
 );
 
