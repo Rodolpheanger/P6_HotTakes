@@ -1,5 +1,10 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/" }],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://p6-hot-takes-api.vercel.app/api/"
+    }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",
