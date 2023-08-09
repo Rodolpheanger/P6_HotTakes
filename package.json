@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "backend",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "init": "nvm use 16.14.0 && npm start",
     "start": "nodemon"
