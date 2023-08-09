@@ -11,14 +11,13 @@ const saucesRoutes = require("./routes/sauces");
 app.use(express.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://p6.rodolpheanger.fr",
     methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-    headers:
-      "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization",
+    // headers:
+    //   "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization",
   })
 );
 
-app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
 app.use("/images", express.static(path.join(__dirname, "../images")));
 app.use("/api/auth", userRoutes);
 app.use("/api/sauces", saucesRoutes);
