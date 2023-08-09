@@ -9,7 +9,24 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/",
+      "headers": [
+        {
+          "source": "/api/.*",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "https://p6.rodolpheanger.fr"
+            },
+            {
+              "key": "Access-Control-Allow-Methods",
+              "value": "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+            },
+            { "key": "Access-Control-Allow-Headers", "value": "*" },
+            { "key": "Access-Control-Allow-Credentials", "value": "true" }
+          ]
+        }
+      ]
     }
   ]
 }
